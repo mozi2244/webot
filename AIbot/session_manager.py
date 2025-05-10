@@ -7,13 +7,12 @@ from typing import Dict, List, Optional
 
 
 class SessionManager:
-    """会话管理器，管理用户对话历史"""
+    """会话管理器，负责管理每个用户的对话历史和会话超时。"""
     
     def __init__(self, max_history: int = 10, session_timeout: int = 1800):
         """
         初始化会话管理器
-        
-        Args:
+        参数：
             max_history: 每个用户保存的最大消息数
             session_timeout: 会话超时时间（秒）
         """
@@ -23,11 +22,10 @@ class SessionManager:
     
     def add_message(self, wxid: str, role: str, content: str) -> None:
         """
-        添加消息到会话历史
-        
-        Args:
+        添加消息到用户会话历史
+        参数：
             wxid: 用户ID
-            role: 消息角色 (user/assistant)
+            role: 消息角色（user/assistant）
             content: 消息内容
         """
         if wxid not in self.sessions:
@@ -42,13 +40,10 @@ class SessionManager:
     def get_history(self, wxid: str, max_count: Optional[int] = None) -> List[Dict[str, str]]:
         """
         获取用户的会话历史
-        
-        Args:
+        参数：
             wxid: 用户ID
-            max_count: 最大返回消息数，None表示返回全部
-            
-        Returns:
-            消息历史列表
+            max_count: 最大返回消息数，None为全部
+        返回：消息历史列表
         """
         if wxid not in self.sessions:
             return []
@@ -66,10 +61,8 @@ class SessionManager:
     
     def clear_history(self, wxid: str) -> None:
         """
-        清除用户的会话历史
-        
-        Args:
-            wxid: 用户ID
+        清除指定用户的会话历史
+        参数：wxid: 用户ID
         """
         if wxid in self.sessions:
             del self.sessions[wxid]
@@ -77,9 +70,7 @@ class SessionManager:
     def clear_expired_sessions(self) -> int:
         """
         清理所有过期会话
-        
-        Returns:
-            清理的会话数量
+        返回：清理的会话数量
         """
         current_time = time.time()
         expired_wxids = [

@@ -24,7 +24,7 @@ from AIbot.user_manager import user_manager
 
 
 class AIBot:
-    """AI机器人类"""
+    """AI机器人，负责与OneBot API通信并处理微信私聊消息。"""
     
     def __init__(
         self,
@@ -34,8 +34,7 @@ class AIBot:
     ):
         """
         初始化AI机器人
-        
-        Args:
+        参数：
             api_url: OneBot API的地址
             access_token: 访问令牌
             admin_wxid: 管理员微信ID
@@ -75,14 +74,12 @@ class AIBot:
     
     async def _call_api(self, action: str, params: Dict[str, Any] = None) -> Dict:
         """
-        调用OneBot API
-        
-        Args:
+        调用OneBot API接口
+        参数：
             action: 动作名称
-            params: 参数
-            
-        Returns:
-            API返回结果
+            params: 参数字典
+        返回：
+            API返回的字典结果
         """
         headers = {"Content-Type": "application/json"}
         if self.access_token:
@@ -112,10 +109,9 @@ class AIBot:
     
     async def _process_event(self, event: Dict) -> None:
         """
-        处理事件
-        
-        Args:
-            event: 事件数据
+        处理收到的事件（仅处理私聊消息）
+        参数：
+            event: 事件数据字典
         """
         try:
             if event.get("type") == "message" and event.get("detail_type") == "private":
@@ -135,7 +131,9 @@ class AIBot:
             logger.error(f"处理事件出错: {e}")
     
     def _get_message_text(self, event: Dict) -> str:
-        """从事件中提取消息文本用于日志输出"""
+        """
+        从事件中提取文本消息内容，用于日志输出
+        """
         try:
             if "message" in event:
                 text_parts = []
@@ -148,7 +146,10 @@ class AIBot:
             return "[消息解析错误]"
     
     async def _fetch_events(self) -> List[Dict]:
-        """获取最新事件"""
+        """
+        获取最新事件列表
+        返回：事件字典列表
+        """
         result = await self._call_api("get_latest_events", {"timeout": 30})
         if result.get("status") == "ok" and "data" in result:
             # 兼容data为list或dict
@@ -159,7 +160,9 @@ class AIBot:
         return []
     
     async def run(self) -> None:
-        """运行机器人"""
+        """
+        启动并运行机器人主循环
+        """
         self.running = True
         logger.info("AI机器人启动...")
         # 新增：输出当前环境变量相关信息
@@ -195,7 +198,9 @@ class AIBot:
                 await asyncio.sleep(5)
     
     async def _session_cleanup_task(self) -> None:
-        """定期清理过期会话的任务"""
+        """
+        定时清理过期会话任务
+        """
         while self.running:
             try:
                 count = session_manager.clear_expired_sessions()
@@ -207,13 +212,17 @@ class AIBot:
             await asyncio.sleep(3600)  # 每小时清理一次
     
     def stop(self) -> None:
-        """停止机器人"""
+        """
+        停止机器人运行
+        """
         self.running = False
         logger.info("AI机器人停止...")
 
 
 async def run_bot():
-    """运行机器人的入口函数"""
+    """
+    机器人运行入口，负责环境变量读取和异常处理
+    """
     # 从环境变量获取配置
     api_url = os.environ.get("ONEBOT_API_URL", "http://127.0.0.1:8000")
     access_token = os.environ.get("ONEBOT_ACCESS_TOKEN", "")
@@ -232,7 +241,9 @@ async def run_bot():
 
 
 def main():
-    """主函数"""
+    """
+    主函数，负责启动机器人
+    """
     try:
         asyncio.run(run_bot())
     except KeyboardInterrupt:

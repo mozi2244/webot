@@ -11,9 +11,15 @@ from .config import DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEFAULT_PROMPT, MAX_TOK
 
 
 class DeepSeekClient:
-    """DeepSeek API客户端"""
+    """DeepSeek API客户端，负责与DeepSeek服务交互，生成AI回复。"""
     
     def __init__(self, api_key: str = DEEPSEEK_API_KEY, base_url: str = DEEPSEEK_BASE_URL):
+        """
+        初始化DeepSeek客户端
+        参数：
+            api_key: DeepSeek API密钥
+            base_url: DeepSeek API基础地址
+        """
         self.api_key = api_key
         self.base_url = base_url
         self.default_prompt = DEFAULT_PROMPT
@@ -30,7 +36,15 @@ class DeepSeekClient:
         temperature: float = TEMPERATURE,
         max_tokens: int = MAX_TOKENS
     ) -> Optional[str]:
-        """生成回复"""
+        """
+        调用DeepSeek API生成AI回复
+        参数：
+            prompt: 系统提示词
+            messages: 聊天历史消息
+            temperature: 采样温度
+            max_tokens: 最大token数
+        返回：AI回复文本或错误提示
+        """
         if not self.api_key:
             print("错误: DeepSeek API密钥未设置")
             return "很抱歉，AI服务暂时不可用，请联系管理员设置API密钥。"

@@ -1,5 +1,5 @@
 """
-命令处理器，用于处理用户的命令
+命令处理器，用于处理用户命令和管理员命令
 """
 import re
 from typing import Dict, Optional, Tuple
@@ -9,14 +9,13 @@ from .session_manager import session_manager
 
 
 class CommandHandler:
-    """命令处理器"""
+    """命令处理器，负责解析和执行用户/管理员命令"""
     
     def __init__(self, admin_wxid: Optional[str] = None):
         """
         初始化命令处理器
-        
-        Args:
-            admin_wxid: 管理员的wxid
+        参数：
+            admin_wxid: 管理员微信ID
         """
         self.admin_wxid = admin_wxid
         self.commands = {
@@ -34,26 +33,19 @@ class CommandHandler:
     
     def is_command(self, text: str) -> bool:
         """
-        检查文本是否是命令
-        
-        Args:
-            text: 文本消息
-            
-        Returns:
-            是否是命令
+        判断文本是否为命令（以/开头）
+        参数：text: 文本内容
+        返回：是否为命令
         """
         return text.startswith("/")
     
     async def handle_command(self, wxid: str, text: str) -> Optional[str]:
         """
-        处理命令
-        
-        Args:
-            wxid: 用户wxid
+        处理命令文本，分发到对应命令处理函数
+        参数：
+            wxid: 用户微信ID
             text: 命令文本
-            
-        Returns:
-            命令处理结果，如果不是命令则返回None
+        返回：命令处理结果字符串或None
         """
         print(f"[调试] handle_command收到: '{text}'")
         if not self.is_command(text):
@@ -68,7 +60,9 @@ class CommandHandler:
         return "未知命令，发送 /help 查看帮助"
     
     async def help_command(self, wxid: str) -> str:
-        """帮助命令"""
+        """
+        帮助命令，返回命令帮助信息
+        """
         help_text = """AI机器人命令帮助：
 /on - 开启AI自动回复
 /off - 关闭AI自动回复
@@ -89,17 +83,23 @@ class CommandHandler:
         return help_text
     
     async def enable_auto_reply(self, wxid: str) -> str:
-        """开启自动回复"""
+        """
+        开启AI自动回复
+        """
         user_manager.enable_auto_reply(wxid)
         return "已开启AI自动回复功能"
     
     async def disable_auto_reply(self, wxid: str) -> str:
-        """关闭自动回复"""
+        """
+        关闭AI自动回复
+        """
         user_manager.disable_auto_reply(wxid)
         return "已关闭AI自动回复功能"
     
     async def status_command(self, wxid: str) -> str:
-        """查看状态命令"""
+        """
+        查询当前AI自动回复状态和个性化提示词
+        """
         enabled = user_manager.is_auto_reply_enabled(wxid)
         status = "已开启" if enabled else "已关闭"
         custom_prompt = user_manager.get_custom_prompt(wxid)
@@ -107,17 +107,23 @@ class CommandHandler:
         return f"AI自动回复功能: {status}{prompt_info}"
     
     async def clear_history(self, wxid: str) -> str:
-        """清除历史命令"""
+        """
+        清除当前用户的聊天历史
+        """
         session_manager.clear_history(wxid)
         return "已清除聊天历史记录"
     
     async def set_prompt(self, wxid: str, prompt: str) -> str:
-        """设置提示词命令"""
+        """
+        设置个性化提示词
+        """
         user_manager.set_custom_prompt(wxid, prompt)
         return f"已设置个性化提示词:\n{prompt}"
     
     async def list_enabled_users(self, wxid: str) -> str:
-        """列出所有启用自动回复的用户"""
+        """
+        管理员命令：列出所有已启用自动回复的用户
+        """
         if wxid != self.admin_wxid:
             return "权限不足，此命令仅管理员可用"
         
@@ -128,7 +134,9 @@ class CommandHandler:
         return "已启用AI自动回复的用户：\n" + "\n".join(users)
     
     async def admin_enable_user(self, wxid: str, target_wxid: str) -> str:
-        """管理员为指定用户开启自动回复"""
+        """
+        管理员命令：为指定用户开启自动回复
+        """
         if wxid != self.admin_wxid:
             return "权限不足，此命令仅管理员可用"
         
@@ -136,7 +144,9 @@ class CommandHandler:
         return f"已为用户 {target_wxid} 开启AI自动回复"
     
     async def admin_disable_user(self, wxid: str, target_wxid: str) -> str:
-        """管理员为指定用户关闭自动回复"""
+        """
+        管理员命令：为指定用户关闭自动回复
+        """
         if wxid != self.admin_wxid:
             return "权限不足，此命令仅管理员可用"
         

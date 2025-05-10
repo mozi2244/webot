@@ -1,63 +1,90 @@
 ![ComWeChatBotClient](https://socialify.git.ci/JustUndertaker/ComWeChatBotClient/image?description=1&font=Inter&name=1&pattern=Circuit%20Board&theme=Auto)
 <p align="center">
-    <a href="https://onebot.dev/"><img src="https://img.shields.io/badge/OneBot-12-black?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADxPgR5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF////29vbr6+vAAAAk1hCcwAAAAR0Uk5T////AEAqqfQAAAKcSURBVHja7NrbctswDATQXfD//zlpO7FlmwAWIOnOtNaTM5JwDMa8E+PNFz7g3waJ24fviyDPgfhz8fHP39cBcBL9KoJbQUxjA2iYqHL3FAnvzhL4GtVNUcoSZe6eSHizBcK5LL7dBr2AUZlev1ARRHCljzRALIEog6H3U6bCIyqIZdAT0eBuJYaGiJaHSjmkYIZd+qSGWAQnIaz2OArVnX6vrItQvbhZJtVGB5qX9wKqCMkb9W7aexfCO/rwQRBzsDIsYx4AOz0nhAtWu7bqkEQBO0Pr+Ftjt5fFCUEbm0Sbgdu8WSgJ5NgH2iu46R/o1UcBXJsFusWF/QUaz3RwJMEgngfaGGdSxJkE/Yg4lOBryBiMwvAhZrVMUUvwqU7F05b5WLaUIN4M4hRocQQRnEedgsn7TZB3UCpRrIJwQfqvGwsg18EnI2uSVNC8t+0QmMXogvbPg/xk+Mnw/6kW/rraUlvqgmFreAA09xW5t0AFlHrQZ3CsgvZm0FbHNKyBmheBKIF2cCA8A600aHPmFtRB1XvMsJAiza7LpPog0UJwccKdzw8rdf8MyN2ePYF896LC5hTzdZqxb6VNXInaupARLDNBWgI8spq4T0Qb5H4vWfPmHo8OyB1ito+AysNNz0oglj1U955sjUN9d41LnrX2D/u7eRwxyOaOpfyevCWbTgDEoilsOnu7zsKhjRCsnD/QzhdkYLBLXjiK4f3UWmcx2M7PO21CKVTH84638NTplt6JIQH0ZwCNuiWAfvuLhdrcOYPVO9eW3A67l7hZtgaY9GZo9AFc6cryjoeFBIWeU+npnk/nLE0OxCHL1eQsc1IciehjpJv5mqCsjeopaH6r15/MrxNnVhu7tmcslay2gO2Z1QfcfX0JMACG41/u0RrI9QAAAABJRU5ErkJggg==" alt="onebot12"></a>
+    <a href="https://onebot.dev/"><img src="https://img.shields.io/badge/OneBot-12-black?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADxPgR5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF////29vbr6+vAAAAk1hCcwAAAAR0Uk5T////AEAqqfQAAAKcSURBVHja7NrbctswDATQXfD//zlpO7FlmwAWIOnOtNaTM5JwDMa8E+PNFz7g3waJ24fviyDPgfhz8fHP39cBcBL9KoJbQUxjA2iYqHL3FAnvzhL4GtVNUcoSZe6eSHizBcK5LL7dBr2AUZlev1ARRHCljzRALIEog6H3U6bCIyqIZdAT0eBuJYaGiJaHSjmkYIZd+qSGWAQnIaz2OArVnX6vrItQvbhZJtVGB5qX9wKqCMkb9W7aexfCO/rwQRBzsDIsYx4AOz0nhAtWu7bqkEQBO0Pr+Ftjt5fFCUEbm0Sbgdu8WSgJ5NgH2iu46R/o1UcBXJsFusWF/QUaz3RwJMEgngfaGGdSxJkE/Yg4lOBryBiMwvAhZrVMUUvwqU7F05b5WLaUIN4M4hRocQQRnEedgsn7TZB3UCpRrIJwQfqvGwsg18EnI2uSVNC8t+0QmMXogvbPg/xk+Mnw/6kW/rraUlvqgmFreAA09xW5t0AFlHrQZ3CsgvZm0FbHNKyBmheBKIF2cCA8A600aHPmFtRB1XvMsJAiza7LpPog0UJwccKdzw8rdf8MyN2ePYF896LC5hTzdZqxb6VNXInaupARLDNBWgI8spq4T0Qb5H4vWfPmHo8OyB1ito+AysNNz0oglj1U955sjUN9d41LnrX2D/u7eRwxyOaOpfyevCWbTgDEoilsOnu7zsKhjRCsnD/QzhdkYBLXjiK4f3UWmcx2M7PO21CKVTH84638NTplt6JIQH0ZwCNuiWAfvuLhdrcOYPVO9eW3A67l7hZtgaY9GZo9AFc6cryjoeFBIWeU+npnk/nLE0OxCHL1eQsc1IciehjpJv5mqCsjeopaH6r15/MrxNnVhu7tmcslay2gO2Z1QfcfX0JMACG41/u0RrI9QAAAABJRU5ErkJggg==" alt="onebot12"></a>
     <a href="https://github.com/JustUndertaker/ComWeChatBotClient/blob/main/LICENSE"><img src="https://img.shields.io/github/license/JustUndertaker/ComWeChatBotClient" alt="License"></a>
     <a href="https://github.com/JustUndertaker/ComWeChatBotClient/releases"><img src="https://img.shields.io/github/v/release/JustUndertaker/ComWeChatBotClient?color=blueviolet&include_prereleases" alt="release"></a>
 </p>
 
-## 简介
+# ComWeChatBotClient
 
-`ComWeChatRobot`的客户端封装，支持`onebot12`通信协议。
+## 项目简介 | Project Introduction
 
-## 许可证
-`ComWeChatRobot Client` 采用 [AGPLv3](https://github.com/JustUndertaker/ComWeChatBotClient/blob/main/LICENSE) 协议开源，不鼓励、不支持一切商业使用。
+ComWeChatBotClient 是基于 PC 微信的自动化机器人客户端，支持 [OneBot 12](https://onebot.dev/) 协议，集成 AI 智能回复（DeepSeek），可实现微信消息的自动处理、智能对话、远程管理等功能。
 
-## 上游依赖
+ComWeChatBotClient is an automation bot client for PC WeChat, supporting the [OneBot 12](https://onebot.dev/) protocol. It integrates AI-powered auto-reply (DeepSeek) and enables automatic message handling, intelligent conversation, and remote management for WeChat.
 
-- [ComWeChatRobot](https://github.com/ljc545w/ComWeChatRobot)：PC微信机器人，实现获取通讯录，发送文本、图片、文件等消息，封装COM接口供Python、C#调用
+## 主要功能 | Main Features
 
-## 支持的微信版本
+- 支持 OneBot 12 协议（HTTP、Webhook、正/反向 WebSocket）
+- 微信私聊消息自动回复，集成 DeepSeek AI
+- 支持自定义提示词、上下文对话
+- 管理员远程控制与多用户管理
+- 丰富的命令系统，支持个性化配置
+- 日志、数据、文件缓存管理
 
-- **3.7.0.30**: 下载连接在 [这里](https://github.com/tom-snow/wechat-windows-versions/releases/download/v3.7.0.30/WeChatSetup-3.7.0.30.exe)
+- Supports OneBot 12 protocol (HTTP, Webhook, Forward/Reverse WebSocket)
+- Auto-reply for WeChat private messages with DeepSeek AI
+- Custom prompt and context-aware conversation
+- Remote admin control and multi-user management
+- Rich command system and personalized configuration
+- Logging, data, and file cache management
 
-## 文档
+## 目录结构 | Directory Structure
 
-文档连接：[传送门](https://justundertaker.github.io/ComWeChatBotClient/)
+```
+├── AIbot/                # AI 智能回复模块（AI Auto-reply Module）
+├── wechatbot_client/     # 微信客户端核心（WeChat Client Core）
+├── data/                 # 数据存储（Data Storage）
+├── file_cache/           # 文件缓存（File Cache）
+├── log/                  # 日志文件（Logs）
+├── docs/                 # 项目文档（Documentation）
+├── main.py               # 启动入口（Entry Point）
+├── requirements.txt      # Python依赖（Python Requirements）
+├── package.json          # Node依赖（Node Requirements）
+└── README.md             # 项目说明（Project Readme）
+```
 
-## Onebot12支持
+## 安装与使用 | Installation & Usage
 
-- [x] HTTP
-- [x] HTTP Webhook
-- [x] 正向 Websocket
-- [x] 反向 Websocket
+1. **环境准备 | Environment**
+   - Windows 10/11，Python 3.7+
+   - 安装依赖 Install dependencies:
+     ```powershell
+     pip install -r requirements.txt
+     pip install httpx loguru
+     ```
+2. **配置微信与API | Configure WeChat & API**
+   - 下载并安装支持的微信版本（3.7.0.30）
+   - 配置 `.env` 文件或环境变量，设置 DeepSeek API 密钥、OneBot API 地址等
+3. **启动服务 | Start Service**
+   - 启动微信客户端和 ComWeChatBotClient 服务端
+   - 启动 AIbot：
+     ```powershell
+     cd AIbot
+     python run.py
+     ```
 
-## 更新日志
-### 2023/6/5 V0.0.8
- - 修复status_update元事件缺失
- - 发送消息遇到错误不会直接返回failed，而是尝试将所有消息段发出
- - 处理其他程序分享的app消息
-### 2023/4/16 v0.0.7
- - 修复需要两次ctrl+c才能退出的问题
- - 修复备份数据库接口
-### 2023/4/8 v0.0.6
- - 修复`反向 Websocket` 子协议问题
- - `Webhook` 和 `反向 Websocket` 支持多地址
-### 2023/4/6 v0.0.5
- - 修复定时器模块启动
-### 2023/4/4 v0.0.4
- - 修复定时模块启动问题
- - 限制请求action日志的长度
- - 添加自动清理文件缓存任务
-### 2023/4/2 v0.0.3
- - 修复ws buffer缓冲区大小问题。
- - 重写file manager保存文件的命名逻辑
- - 修复部分bug
-### 2023/4/1 v0.0.2
- - 修复群聊发送不了纯文本消息的bug。
- - 修改部分文档。
-### 2023/3/29 v0.0.1
-- 初步可用，写个文档应该不会被发现吧。
+## 配置说明 | Configuration
 
-### 2023/3/16
+- `DEEPSEEK_API_KEY`：DeepSeek API 密钥（必填 Required）
+- `ONEBOT_API_URL`：OneBot API 地址（如 http://127.0.0.1:8000）
+- `ONEBOT_ACCESS_TOKEN`：OneBot 访问令牌（可选 Optional）
+- `ADMIN_WXID`：管理员微信ID（可选 Optional）
+- 其他参数详见 `AIbot/config.py` 和 `.env` 文件
 
--  随便写写啦，反正不会写。
+## 常见问题 | FAQ
+
+- **Q: 支持哪些微信版本？**
+  - A: 仅支持 3.7.0.30，下载链接见上文。
+- **Q: 如何自定义AI回复风格？**
+  - A: 通过 `/prompt <内容>` 命令或配置自定义提示词。
+- **Q: 如何添加/移除自动回复用户？**
+  - A: 普通用户可用 `/on` `/off`，管理员可用 `/admin enable <wxid>` `/admin disable <wxid>`。
+- **Q: 日志和数据存储在哪里？**
+  - A: 日志在 `log/`，用户数据在 `data/`。
+
+## 开源协议 | License
+
+本项目采用 [AGPLv3](https://github.com/JustUndertaker/ComWeChatBotClient/blob/main/LICENSE) 协议开源，禁止商业用途。
+
+This project is licensed under [AGPLv3](https://github.com/JustUndertaker/ComWeChatBotClient/blob/main/LICENSE), commercial use is NOT allowed.

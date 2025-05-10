@@ -1,5 +1,5 @@
 """
-AIbot初始化文件
+AIbot包初始化，导出主要组件供外部调用。
 """
 
 from .command_handler import command_handler

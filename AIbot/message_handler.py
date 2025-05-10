@@ -13,21 +13,20 @@ from .user_manager import user_manager
 
 
 class MessageHandler:
-    """消息处理器"""
+    """消息处理器，负责处理私聊消息、命令和AI回复。"""
     
     def __init__(self):
-        """初始化消息处理器"""
+        """
+        初始化消息处理器
+        """
         self.is_processing = {}  # 用于跟踪正在处理的消息，避免重复处理
     
     async def handle_message(self, message: dict) -> Optional[dict]:
         """
-        处理接收到的消息
-        
-        Args:
+        处理收到的消息，支持命令和AI自动回复
+        参数：
             message: 消息数据字典
-            
-        Returns:
-            回复消息数据或None
+        返回：回复消息字典或None
         """
         # 增加调试日志，打印收到的消息内容
         print(f"[调试] handle_message收到消息: {message}")
@@ -84,7 +83,9 @@ class MessageHandler:
             return None
     
     def _extract_text_content(self, message: dict) -> Optional[str]:
-        """提取消息中的文本内容"""
+        """
+        提取消息中的文本内容
+        """
         if "message" not in message:
             print("[调试] 消息中无'message'字段")
             return None
@@ -99,7 +100,9 @@ class MessageHandler:
         return "".join(text_segments) if text_segments else None
     
     async def _process_ai_message(self, wxid: str, content: str, msg_id: Optional[str]) -> Optional[dict]:
-        """处理需要AI回复的消息"""
+        """
+        处理需要AI回复的消息，调用AI生成回复
+        """
         try:
             # 记录用户消息到会话
             session_manager.add_message(wxid, "user", content)
@@ -129,7 +132,9 @@ class MessageHandler:
             self._clear_processing_state(msg_id)
     
     def _clear_processing_state(self, msg_id: Optional[str]) -> None:
-        """清除消息处理状态"""
+        """
+        清除消息处理状态，避免重复处理
+        """
         if msg_id and msg_id in self.is_processing:
             del self.is_processing[msg_id]
 

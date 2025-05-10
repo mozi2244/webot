@@ -1,5 +1,5 @@
 """
-配置文件
+配置文件，定义AIbot相关的环境变量和默认参数
 """
 from dotenv import load_dotenv
 load_dotenv()
